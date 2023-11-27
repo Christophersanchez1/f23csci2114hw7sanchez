@@ -1,4 +1,4 @@
-
+//25164150
 public class Sanchez2 {
     public static void main(String[] args) {
         double squaresSum = 0;
@@ -19,8 +19,7 @@ public class Sanchez2 {
         }
       difference = (int) (squaredSum - squaresSum);
         System.out.println(difference);
-        System.out.println(squaresSum);
-        System.out.println(squaredSum);
+
 
 
     }
