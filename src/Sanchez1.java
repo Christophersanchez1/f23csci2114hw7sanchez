@@ -1,5 +1,6 @@
 //4613732
-public class Sanchez1 {public static void main(String[] args) {
+public class Sanchez1 {
+    public static void main(String[] args) {
     int sum = 2;
     int n1=1;
     int n2=2;
