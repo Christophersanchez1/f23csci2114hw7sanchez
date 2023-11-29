@@ -20,7 +20,5 @@ public class Sanchez2 {
       difference = (int) (squaredSum - squaresSum);
         System.out.println(difference);
 
-
-
     }
 }
