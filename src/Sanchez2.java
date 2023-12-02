@@ -1,24 +1,19 @@
-//25164150
+//4613732
 public class Sanchez2 {
     public static void main(String[] args) {
-        double squaresSum = 0;
-        int  squaredSum = 0;
-        int difference = 0;
+    int sum = 2;
+    int n1=1;
+    int n2=2;
+    int n=0;
 
-        for(int i = 0; i<=100;i++){
-            squaredSum += i;
-
-
+    while(n<4000000){
+        n=n1+n2;
+        n1=n2;
+        n2=n;
+        if(n%2==0){
+            sum=sum+n;
         }
-        squaredSum = squaredSum * squaredSum;
-
-        for(double i = 0; i<=100;i++){
-            double a =0;
-            a = Math.pow(i,2);
-            squaresSum =  squaresSum+a;
-        }
-      difference = (int) (squaredSum - squaresSum);
-        System.out.println(difference);
-
     }
+    System.out.println(sum);
+}
 }

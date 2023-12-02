@@ -1,39 +1,33 @@
-//6857
-import java.math.BigInteger;
+//906609
 public class Sanchez4 {
-    public static void main(String[] args) {
-        BigInteger number = new BigInteger("600851475143");
-        BigInteger largePrime = new BigInteger("-1");
-        while (number.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO)) {
-            largePrime = BigInteger.valueOf(2);
-            number = number.divide(BigInteger.valueOf(2));
+    public static boolean palindrome(int number){
+        int firstNumber = number;
+        int reversed = 0;
+        while(number>0){
+            int digit = number % 10;
+            reversed = reversed * 10 +digit;
+            number/=10;
         }
-
-        while (number.mod(BigInteger.valueOf(3)).equals(BigInteger.ZERO)) {
-            largePrime = BigInteger.valueOf(3);
-            number = number.divide(BigInteger.valueOf(3));
-        }
-
-        BigInteger factor = BigInteger.valueOf(5);
-        BigInteger increment = BigInteger.valueOf(2);
-
-        while (factor.multiply(factor).compareTo(number) <= 0) {
-            while (number.mod(factor).equals(BigInteger.ZERO)) {
-                largePrime = factor;
-                number = number.divide(factor);
-            }
-            factor = factor.add(increment);
-            increment = BigInteger.valueOf(6 - increment.intValue());
-        }
-
-        if (number.compareTo(BigInteger.valueOf(1)) > 0) {
-            largePrime = number;
-        }
-
-        System.out.println(largePrime);
+        return firstNumber == reversed;
     }
+    public static  int findLargestPalindrome(int start, int end){
+        int LargestPalindrome =0;
+        for (int i = start; i<=end;i++){
+            for (int j = i; j<= end; j++){
+                int product = i* j;
+                if(palindrome(product) && product >LargestPalindrome){
+                    LargestPalindrome = product;
+                }
+            }
+        }
+        return LargestPalindrome;
+    }
+    public static void main(String[] args) {
+        int start = 100;
+        int end =999;
 
+        int LargestPalindrome = findLargestPalindrome(start,end);
+        System.out.println(LargestPalindrome);
 
-
-
+    }
 }

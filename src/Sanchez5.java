@@ -1,33 +1,26 @@
-//906609
+//232792560
 public class Sanchez5 {
-    public static boolean palindrome(int number){
-        int firstNumber = number;
-        int reversed = 0;
-        while(number>0){
-            int digit = number % 10;
-            reversed = reversed * 10 +digit;
-            number/=10;
-        }
-        return firstNumber == reversed;
-    }
-    public static  int findLargestPalindrome(int start, int end){
-        int LargestPalindrome =0;
-        for (int i = start; i<=end;i++){
-            for (int j = i; j<= end; j++){
-                int product = i* j;
-                if(palindrome(product) && product >LargestPalindrome){
-                    LargestPalindrome = product;
-                }
-            }
-        }
-        return LargestPalindrome;
-    }
+
+   static  int answer =0;
     public static void main(String[] args) {
-        int start = 100;
-        int end =999;
+        int i= 1;
+        boolean found = false;
 
-        int LargestPalindrome = findLargestPalindrome(start,end);
-        System.out.println(LargestPalindrome);
-
+       while (!found){
+            boolean divisibleByAll = true;
+            for(int d= 1; d <= 20;d++){
+               int remainder = i % d;
+                if(remainder != 0){
+                    divisibleByAll = false;
+                    break;
+                }
+                }
+            if(divisibleByAll){
+                answer =i;
+                found = true;
+            }
+            i++;
+        }
+        System.out.println(answer);
     }
 }

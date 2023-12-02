@@ -1,31 +1,24 @@
-//104743
+//25164150
 public class Sanchez6 {
     public static void main(String[] args) {
-        int nth = 10001;
-        int count = 0;
-        int number =2;
-        while (true){
-            if(isPrime(number)){
-                count++;
-            }
-            if (count == nth){
-                System.out.println(number);
-                break;
-            }
-            number++;
-        }
+        double squaresSum = 0;
+        int  squaredSum = 0;
+        int difference = 0;
+
+        for(int i = 0; i<=100;i++){
+            squaredSum += i;
 
 
-    }
-    public static  boolean isPrime(int number){
-        if(number<=1){
-            return false;
         }
-        for(int i =2;i<= Math.sqrt(number);i++){
-            if(number % i == 0) {
-                return false;
-            }
+        squaredSum = squaredSum * squaredSum;
+
+        for(double i = 0; i<=100;i++){
+            double a =0;
+            a = Math.pow(i,2);
+            squaresSum =  squaresSum+a;
         }
-        return true;
+      difference = (int) (squaredSum - squaresSum);
+        System.out.println(difference);
+
     }
 }
